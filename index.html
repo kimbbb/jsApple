@@ -3,16 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <h1 id="hello">하이</h1>
+  <!-- <h1 id="hello">하이</h1>
   <h1 id="hi">JS 초보</h1>
   <script>
     document.getElementById('hello').innerHTML='안녕'
     document.getElementById('hello').style.fontSize='16px'
     document.getElementById('hi').innerHTML='JS 고수'
-  // document.getElementById('??').??='??'
-  //문서.의 html id요소를 가져와라(id가 hello).내부HTML을 '안녕'으로 바꾸어주세용
+    // document.getElementById('??').??='??'
+    //문서.의 html id요소를 가져와라(id가 hello).내부HTML을 '안녕'으로 바꾸어주세용
+  </script> -->
+
+  <div class="alert-box" id="alert">알림창ㅋ
+    <button onclick="close">닫기</button>
+  </div>
+  <button onclick="open">버튼</button>
+
+  <script>
+    //조작할 html 코드 밑에 js코드 짜야 동작함
+    //오타주의(f12(개발자 도구)활용)
+
+    function close() { //첫글자 소문자사용, camelCase
+      document.getElementById('alert').style.display='none';
+    }
+
+    function open() {
+      document.getElementById('alert').style.display='block';
+    }
+
   </script>
+
 </body>
 </html>
