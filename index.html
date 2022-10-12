@@ -16,22 +16,38 @@
     //문서.의 html id요소를 가져와라(id가 hello).내부HTML을 '안녕'으로 바꾸어주세용
   </script> -->
 
-  <div class="alert-box" id="alert">알림창ㅋ
-    <button onclick="close">닫기</button>
+  <div class="alert-box" id="alert">
+    <p id="title">알림창</p>
+    <button id="close">닫기</button>
   </div>
-  <button onclick="open">버튼</button>
+  <button onclick="openid()">아이디</button>
+  <button onclick="openpass()">비번</button>
+
 
   <script>
     //조작할 html 코드 밑에 js코드 짜야 동작함
     //오타주의(f12(개발자 도구)활용)
 
-    function close() { //첫글자 소문자사용, camelCase
-      document.getElementById('alert').style.display='none';
+    const closw=document.getElementById('close').addEventListener('click', function(){
+      alert.style.display='none';
+    });
+    
+    const alert = document.getElementById("alert");
+    const alertName = document.getElementById("title");
+
+    function openid() {
+      alert.style.display='block';
+      alertName.innerHTML='아이디입력하셈'
     }
 
-    function open() {
-      document.getElementById('alert').style.display='block';
+    function openpass() {
+      alert.style.display='block';
+      alertName.innerHTML='비번입력하셈'
     }
+
+    // function closealert() { //첫글자 소문자사용, camelCase
+    //   alert.style.display='none';
+    // }
 
   </script>
 
