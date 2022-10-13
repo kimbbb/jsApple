@@ -6,8 +6,12 @@
   display: none;
 }
 
-.list-group{
+.list{
   display: none;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem;
 }
 
 .show{
