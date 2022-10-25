@@ -28,12 +28,18 @@
 
   <script>
 
-    document.getElementsByClassName('navbar-toggler')
-    [0].addEventListener('click', function () {
-      document.getElementsByClassName('list')[0].classList.toggle('show')
-    })
+    // document.querySelector('.list') //맨 위의 요소만 찾아줌
+    // document.querySelectorAll('list-group-item')[인덱싱] //모두 찾아줌
 
-    
+    // document.getElementsByClassName('navbar-toggler')
+    // [0].addEventListener('click', function () {
+    //   document.getElementsByClassName('list')[0].classList.toggle('show')
+    // })
+
+    document.querySelectorAll('.navbar-toggler')
+    [0].addEventListener('click', function(){
+      document.querySelectorAll('.list')[0].classList.toggle('show')
+    })
 
   </script>
 
