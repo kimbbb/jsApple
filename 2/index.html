@@ -7,13 +7,31 @@
 </head>
 <body>
   <!-- <h1 id="hello">안녕하세요</h1> -->
-  <div class="alert" id="alert">alert-box <button id="close" onclick="document.getElementById('alert').style.display='none'">close</button></div>
-  <button onclick="document.getElementById('alert').style.display='block'">show</button>
+  <div class="alert" id="alert1"><b>아이디</b>를 입력하시요 <button id="close" onclick="box1('none')">close</button></div>
+  <div class="alert" id="alert2"><b>비밀번호</b>를 입력하시오 <button id="close" onclick="box2('none')">close</button></div>
+  <button id="show" onclick="box1('block')"><b>버튼1</b></button>
+  <button id="show" onclick="box2('block')"><b>버튼2</b></button>
 
   <script>
     // document.getElementById('hello').innerHTML='안녕';
     // document.getElementById('hello').style.fontSize='16px';
     
+    // function closeBox() {
+    //   document.getElementById('alert').style.display='none'
+    // }
+
+    // function show() {
+    //   document.getElementById('alert').style.display='block'
+    // }
+
+    function box1(prams) {
+      document.getElementById('alert1').style.display=prams;
+    }
+
+    function box2(prams) {
+      document.getElementById('alert2').style.display=prams;
+    }
+  
 
   </script>
 </body>
