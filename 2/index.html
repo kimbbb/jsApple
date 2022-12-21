@@ -7,10 +7,10 @@
 </head>
 <body>
   <!-- <h1 id="hello">안녕하세요</h1> -->
-  <div class="alert" id="alert1"><b id="tittle"></b>를 입력해주세요<button id="close" onclick="box('','none')">close</button></div>
+  <div class="alert" id="alert1"><b id="tittle"></b>를 입력해주세요<button id="close" >close</button></div>
 
-  <button id="show" onclick="box('아이디','block')"><b>버튼1</b></button>
-  <button id="show" onclick="box('비밀번호','block')"><b>버튼2</b></button>
+  <button class="show" onclick="box('아이디','block')"><b>버튼1</b></button>
+  <button class="show" onclick="box('비밀번호','block')"><b>버튼2</b></button>
 
   <script>
     // document.getElementById('hello').innerHTML='안녕';
@@ -24,7 +24,10 @@
     //   document.getElementById('alert').style.display='block'
     // }
 
-
+    document.getElementById('close').addEventListener('click', function() {
+      document.getElementById('alert1').style.display='none';
+    });
+    
     function box(tittle, prams) {
       document.getElementById('tittle').innerHTML=tittle;
       document.getElementById('alert1').style.display=prams;
