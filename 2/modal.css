@@ -1,11 +1,28 @@
-.open{
-  margin: 10px;
+nav{
   position: absolute;
+}
+
+.main-bg{
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  height: 280px;
+  padding: 100px 20px;
+  background: lightgray;
+}
+
+.flex{
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.open{
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
   border-radius: 5px;
-  width: 58px;
+  width: 78px;
   height: 38px;
   border:none
 }
@@ -15,7 +32,7 @@
 }
 
 .black-bg {
-  /* transition: all 1s; */
+  transition: all 1s;
   width : 100%;
   height : 100%;
   position : fixed;
@@ -40,8 +57,10 @@ h4{
   background: white;
   border-radius: 5px;
   padding: 30px;
+  margin-top: 40px;
 } 
 
-.show{
-  display: block;
+.list{
+  display: none;
 }
+
