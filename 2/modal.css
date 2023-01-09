@@ -8,7 +8,7 @@ nav{
   width: 100%;
   height: 280px;
   padding: 100px 20px;
-  background: lightgray;
+  background: rgba(211, 211, 211, 0.877);
 }
 
 .flex{
@@ -64,3 +64,7 @@ h4{
   display: none;
 }
 
+.dark{
+  background: #000;
+  color: #fff;
+}
