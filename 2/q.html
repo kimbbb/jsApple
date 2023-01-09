@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+    </script>
+</head>
+<body>
+  <div>
+    <input class="tsn">
+    <button class="btn" >계산</button>
+  </div>
+
+  <script>
+    $('.btn').on('click', function() {
+      const prams=$('.tsn').val()
+      if (prams%3==0){
+        console.log('박수')
+      }else{
+        console.log('통과')
+      }
+    })
+
+    function 삼육구(num) {
+      if (num%3==0){
+        console.log('박수')
+      }else{
+        console.log('통과')
+      }
+    }
+
+    삼육구(11)
+
+    function 구두(n) {
+      if(n%9==0){
+        console.log('박수박수')
+      }
+      else if(n%3==0){
+        console.log('박수')
+      }
+      else{
+        console.log('통과')
+      }
+    }
+
+    구두(6)
+
+    function 합격했니(a,b) {
+      if (a<0 || a>100 || b<0 || b>100) {
+        alert('장난 ㄴ')
+      }
+      if(a<40 || b<40){
+        console.log('불합격')
+      }
+      else if(a+b<120){
+        console.log('불합격')
+      }
+      else{
+        console.log('합격')
+      }
+    }
+
+    합격했니(70,70)
+    합격했니(30,100)
+    합격했니(50,50)
+    합격했니(-1,10)
+    합격했니(1,106)
+
+    function 원래삼육구(c) {
+      const a = String(c)
+      const last= Number(a.charAt(a.length-1))
+
+      if(last==3 || last==6 || last==9){
+        console.log('박수')
+      }
+      else{
+        console.log('통과')
+      }
+    }
+
+    원래삼육구(39)
+  </script>
+</body>
+
+</html>
