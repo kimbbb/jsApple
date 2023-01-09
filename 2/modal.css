@@ -3,8 +3,7 @@ nav{
 }
 
 .main-bg{
-  position: fixed;
-  z-index: 4;
+  position: relative;
   width: 100%;
   height: 280px;
   padding: 100px 20px;
@@ -54,10 +53,14 @@ h4{
   margin-bottom: 1.2rem!important;
 }
 .white-bg {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 20%);
   background: white;
   border-radius: 5px;
   padding: 30px;
   margin-top: 40px;
+  width: 700px;
 } 
 
 .list{
@@ -67,4 +70,26 @@ h4{
 .dark{
   background: #000;
   color: #fff;
+}
+
+.alert{
+  margin-bottom: 0px!important;
+}
+
+.slide{
+  overflow: hidden;
+}
+
+.slide-container{
+  width:300vw;
+  transition: all 1.5s;
+}
+
+.slide-box{
+  width: 100vw;
+  float: left;
+}
+
+.slide-box img{
+  width: 100%;
 }

@@ -11,11 +11,27 @@
   <title>Document</title>
 </head>
 
-<body class="dark">
+<body>
+  <div class="black-bg">
+    <div class="white-bg">
+      <h4>로그인하세요</h4>
+      <form action="success.html">
+        <div class="my-3">
+          <input type="text" class="form-control" id="id">
+        </div>
+        <div class="my-3">
+          <input type="password" class="form-control" id="pass">
+        </div>
+        <button type="submit" class="btn btn-primary">전송</button>
+        <button type="button" class="btn btn-danger" id="close">닫기</button>
+      </form>
+    </div>
+  </div>
+
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <span class="navbar-brand">Navbar</span>
-      <span class="badge bg-dark ms-auto mx-3">Dark 🌝</span>
+      <span class="badge bg-dark ms-auto mx-3">Light 🌞</span>
       <button class="navbar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,24 +54,33 @@
     </div>
   </div>
 
-  <div class="black-bg">
-    <div class="white-bg">
-      <h4>로그인하세요</h4>
-      <form action="success.html">
-        <div class="my-3">
-          <input type="text" class="form-control" id="id">
-        </div>
-        <div class="my-3">
-          <input type="password" class="form-control" id="pass">
-        </div>
-        <button type="submit" class="btn btn-primary">전송</button>
-        <button type="button" class="btn btn-danger" id="close">닫기</button>
-      </form>
+  <div class="alert alert-danger">
+    <span class="time">5</span>초 이내 구매 시 사은품 증정!
+  </div>
+
+  <div class="slide">
+    <div class="slide-container">
+      <div class="slide-box">
+        <img src="img/car1.png">
+      </div>
+      <div class="slide-box">
+        <img src="img/car2.png">
+      </div>
+      <div class="slide-box">
+        <img src="img/car3.png">
+      </div>
     </div>
   </div>
 
+  <button class="slide-1">1</button>
+  <button class="slide-2">2</button>
+  <button class="slide-3">3</button>
+  <button class="next">다음</button>
+  <button class="back">이전</button>
+
+
   <script>
-    
+
     $('.navbar-toggler').on('click', function () {
       $('.list').toggle()
     })
@@ -68,25 +93,37 @@
       $('.black-bg').removeClass('show-modal');
     })
 
-    $('form').on('submit', function(e) {
-      if($('#id').val()=='' && $('#pass').val()=='') {
-        alert('vha 입력하세요');
+    $('form').on('submit', function (e) {
+      console.log($('#id').val(), $('#pass').val())
+
+      if ($('#id').val() == '' && $('#pass').val() == '') {
+        alert('id와 password를 입력하세요');
         e.preventDefault();
       }
-      else if($('#id').val()==''){
+      else if ($('#id').val() == '') {
         alert('아이디를 입력하세요');
         e.preventDefault();
       }
-      else if($('#pass').val()==''){
+      else if ($('#pass').val() == '') {
         alert('비밀번호를 입력하세요');
         e.preventDefault();
       }
+      else if (/\S+@\S+\.\S+/.test($('#id').val()) == false) {
+        alert('이메일 형식이 아닙니다');
+        e.preventDefault();
+      }
+      else if (/[A-Z]/.test($('#pass').val()) == false) {
+        alert('대문자 없는디');
+        e.preventDefault();
+      }
 
-      if(document.getElementById('pass').value.length < 6 || document.getElementById('id').value.length < 6){
+      if (document.getElementById('pass').value.length < 6 || document.getElementById('id').value.length < 6) {
         alert('6글자 이상 입력해주세요');
         e.preventDefault();
       }
-      
+
+
+
     })
 
 
@@ -97,15 +134,78 @@
     //   console.log('안녕')
     // })
 
-    let count=0;
-    $('.badge').on('click', function() {
-      count+=1
-      if(count%2==0){
+    let count = 0;
+    $('.badge').on('click', function () {
+      count += 1
+      if (count % 2 == 0) {
         $('.badge').html('Light 🌞')
-      }else{
+        $('body').removeClass('dark')
+      } else {
         $('.badge').html('Dark 🌝')
+        $('body').addClass('dark')
       }
     })
+
+    // setTimeout(function() {
+    //   $('.alert').hide()
+    // }, 5000)
+
+    // setInterval(function() {
+    //   console.log('안녕')
+    // }, 1000);
+
+    // setTimeout(함수,1000);
+
+    // function 함수() {
+    //   console.log('하이')
+    // }
+
+
+
+    let countdown = 5
+    let timm = setInterval(function down() {
+      countdown -= 1
+      console.log(countdown)
+      $('.time').html(countdown)
+      if (countdown < 0) {
+        clearInterval(timm)
+        $('.alert').hide()
+      }
+    }, 1000);
+
+
+    let pic=0;
+    $('.next').on('click', function() {
+        pic += 1;
+        console.log(pic)
+        if(pic>2){
+          pic=2
+        }
+        $('.slide-container').css('transform', 'translateX(-' + pic + '00vw)');
+        
+    })
+
+    $('.back').on('click', function() {
+        pic-=1;
+        console.log(pic)
+        if(pic<0){
+          pic=0
+        }
+        $('.slide-container').css('transform', 'translateX(-'+pic+'00vw)');
+    })
+
+
+    $('.slide-1').on('click', function() {
+      $('.slide-container').css('transform', 'translateX(0vw)');
+      
+    })
+    $('.slide-2').on('click', function() {
+      $('.slide-container').css('transform', 'translateX(-100vw)');
+    })
+    $('.slide-3').on('click', function() {
+      $('.slide-container').css('transform', 'translateX(-200vw)');
+    })
+
 
     
 
