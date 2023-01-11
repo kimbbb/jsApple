@@ -1,11 +1,27 @@
-nav{
-  position: absolute;
+:root { scroll-behavior : auto } 
+
+.navbar{
+  position: fixed!important;
+  width: 100%;
+  z-index: 5;
+}
+
+.brand{
+  font-size: 25px;
+  color: #000;
+}
+
+.go{
+  height: 3px; 
+  background: #000;
+  position:absolute;
+  bottom: -3%;
 }
 
 .main-bg{
   position: relative;
   width: 100%;
-  height: 280px;
+  height: 300px;
   padding: 100px 20px;
   background: rgba(211, 211, 211, 0.877);
 }
@@ -92,4 +108,8 @@ h4{
 
 .slide-box img{
   width: 100%;
+}
+
+.lorem{
+  margin: 30px 10px;
 }

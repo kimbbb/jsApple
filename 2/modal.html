@@ -12,6 +12,26 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="brand">Navbar</span>
+      <span class="badge bg-dark ms-auto mx-3">Light 🌞</span>
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="go"></div>
+  </nav>
+  <div style="height: 56px;"></div>
+  <div class="list" id="list">
+    <ul class="list-group">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul>
+  </div>
   <div class="black-bg">
     <div class="white-bg">
       <h4>로그인하세요</h4>
@@ -26,25 +46,6 @@
         <button type="button" class="btn btn-danger" id="close">닫기</button>
       </form>
     </div>
-  </div>
-
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand">Navbar</span>
-      <span class="badge bg-dark ms-auto mx-3">Light 🌞</span>
-      <button class="navbar-toggler" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
-  <div class="list" id="list">
-    <ul class="list-group">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
-    </ul>
   </div>
 
   <div class="main-bg">
@@ -78,6 +79,11 @@
   <button class="next">다음</button>
   <button class="back">이전</button>
 
+  <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+  </div> 
+
+  <div style="height: 600px;"></div>
 
   <script>
 
@@ -165,7 +171,6 @@
     let countdown = 5
     let timm = setInterval(function down() {
       countdown -= 1
-      console.log(countdown)
       $('.time').html(countdown)
       if (countdown < 0) {
         clearInterval(timm)
@@ -206,9 +211,28 @@
       $('.slide-container').css('transform', 'translateX(-200vw)');
     })
 
+    $(window).on('scroll', function() {
+      if ($(window).scrollTop()>=100){
+        $('.brand').css('font-size','20px')
+      }else{
+        $('.brand').css('font-size','25px')
+      }
+    })
 
-    
+    $('.lorem').on('scroll', function() {
+      var 양 = document.querySelector('.lorem').scrollTop;
+      var 높이 = document.querySelector('.lorem').scrollHeight;
+      var 화면 = document.querySelector('.lorem').clientHeight;
+      if(양+화면>높이-10){
+        alert('다읽음')
+      }
+    })
 
+
+    $(window).on('scroll', function() {
+      let sum = ($(window).scrollTop() / ($(document).outerHeight() - $(window).height())) * 100;
+      $('.go').css('width',sum+'%')
+    })
   </script>
 
 
