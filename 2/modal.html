@@ -80,8 +80,10 @@
   <button class="back">이전</button>
 
   <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
-  </div> 
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis
+    at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium
+    exercitationem.
+  </div>
 
   <div style="height: 600px;"></div>
 
@@ -179,59 +181,59 @@
     }, 1000);
 
 
-    let pic=0;
-    $('.next').on('click', function() {
-        pic += 1;
-        console.log(pic)
-        if(pic>2){
-          pic=2
-        }
-        $('.slide-container').css('transform', 'translateX(-' + pic + '00vw)');
-        
+    let pic = 0;
+    $('.next').on('click', function () {
+      pic += 1;
+      console.log(pic)
+      if (pic > 2) {
+        pic = 2
+      }
+      $('.slide-container').css('transform', 'translateX(-' + pic + '00vw)');
+
     })
 
-    $('.back').on('click', function() {
-        pic-=1;
-        console.log(pic)
-        if(pic<0){
-          pic=0
-        }
-        $('.slide-container').css('transform', 'translateX(-'+pic+'00vw)');
+    $('.back').on('click', function () {
+      pic -= 1;
+      console.log(pic)
+      if (pic < 0) {
+        pic = 0
+      }
+      $('.slide-container').css('transform', 'translateX(-' + pic + '00vw)');
     })
 
 
-    $('.slide-1').on('click', function() {
+    $('.slide-1').on('click', function () {
       $('.slide-container').css('transform', 'translateX(0vw)');
-      
+
     })
-    $('.slide-2').on('click', function() {
+    $('.slide-2').on('click', function () {
       $('.slide-container').css('transform', 'translateX(-100vw)');
     })
-    $('.slide-3').on('click', function() {
+    $('.slide-3').on('click', function () {
       $('.slide-container').css('transform', 'translateX(-200vw)');
     })
 
-    $(window).on('scroll', function() {
-      if ($(window).scrollTop()>=100){
-        $('.brand').css('font-size','20px')
-      }else{
-        $('.brand').css('font-size','25px')
+    $(window).on('scroll', function () {
+      if ($(window).scrollTop() >= 100) {
+        $('.brand').css('font-size', '20px')
+      } else {
+        $('.brand').css('font-size', '25px')
       }
     })
 
-    $('.lorem').on('scroll', function() {
+    $('.lorem').on('scroll', function () {
       var 양 = document.querySelector('.lorem').scrollTop;
       var 높이 = document.querySelector('.lorem').scrollHeight;
       var 화면 = document.querySelector('.lorem').clientHeight;
-      if(양+화면>높이-10){
+      if (양 + 화면 > 높이 - 10) {
         alert('다읽음')
       }
     })
 
 
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function () {
       let sum = ($(window).scrollTop() / ($(document).outerHeight() - $(window).height())) * 100;
-      $('.go').css('width',sum+'%')
+      $('.go').css('width', sum + '%')
     })
   </script>
 
