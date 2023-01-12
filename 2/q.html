@@ -134,15 +134,54 @@
     // console.log(함수(1,30))
     // console.log(함수(2,10))
 
-      function sale(c,b) {
-        if(b==true){
-          return (c-c/10-1.5).toFixed(1)
-        }
-        return (c-c/10).toFixed(1)
-      }
+    // function sale(c,b) {
+    //   if(b==true){
+    //     return (c-c/10-1.5).toFixed(1)
+    //   }
+    //   return (c-c/10).toFixed(1)
+    // }
 
-      console.log(sale(70,false))
-      console.log(sale(10,true))
+    // console.log(sale(70,false))
+    // console.log(sale(10,true))
+    // const 축구 = ['흥민', '희찬', '강인', '규성'];
+    // console.log(축구)
+
+    // function 이름(name) {
+    //   축구.forEach((a) => {
+    //     if (name == a) {
+    //       return console.log('있어요')
+    //     }
+    //   })
+    // }
+
+    // 이름('철수')
+    // 이름('흥민')
+
+    // for(let i=2; i<10; i++){
+    //   for(let j=1; j<10; j++){
+    //     console.log(i*j)
+    //   }
+    // }
+
+
+  total([10, 20, 30, 40, 50], 40)
+  total([40, 40, 40], 20)
+  function total(year,no) {
+    let sum=0
+    for(let i=0; i<year.length; i++){
+      sum+=year[i]
+    }
+    let test=sum/year.length
+    if(no-test>0){
+      console.log(`평균보다 ${no-test}점이 올랐네요`);
+    }
+    else{
+      console.log(`평균보다 ${(no-test)*-1}점이 떨어졌네요 재수추천`)
+    }
+  }
+
+
+
 
   </script>
 </body>

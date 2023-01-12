@@ -65,7 +65,32 @@ let car2={name:'소나타', price:[50000,6000,4000]}
 // car[0]='아반떼'; //수정
 // car[3]='메롱';  //추가
 // car2.price=60000;
-console.log(car2.price);
-
+// console.log(car2.price);
 $('.name').html(car2.name)
 $('.price').html(car2.price[2])
+
+var pants = [28, 30, 32];
+var shirts = [95, 100, 105];
+$('.size').hide()
+$('.form-select').eq(0).on('input', function(){
+  var value = $('.form-select').eq(0).val();
+  if (value == '셔츠') {
+    $('.size').show()
+    $('.form-select').eq(1).html('');
+    shirts.forEach(function(a){
+      $('.form-select').eq(1).append(`<option>${a}</option>`)
+    })
+  }
+  else if (value == '바지'){
+    $('.size').show()
+    $('.form-select').eq(1).html('');
+    pants.forEach(function(a){
+      $('.form-select').eq(1).append(`<option>${a}</option>`)
+    })
+  }
+  else{
+    $('.size').hide()
+  }
+
+});
+
